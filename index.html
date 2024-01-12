@@ -9,8 +9,27 @@
 </head>
 <body>
     <div class="container">
+       
         <input type="password" placeholder="password" id="password">
-        <i class="fa-regular fa-eye-slash"></i>
-    </div>
+        <i class="fa-regular fa-eye" id="icon"></i>
+   </div>
+   <script>
+      let password = document.getElementById("password");
+      let icon = document.getElementById("icon");
+
+      icon.onclick = function() {
+          if(password.type == "password") {
+            password.type = "text";
+            icon.classList.remove("fa-eye");
+            icon.classList.add("fa-eye-slash");
+          }
+          else {
+            password.type = "password";
+            icon.classList.remove("fa-eye-slash");
+            icon.classList.add("fa-eye");
+          }
+
+      }
+   </script>
 </body>
 </html>
